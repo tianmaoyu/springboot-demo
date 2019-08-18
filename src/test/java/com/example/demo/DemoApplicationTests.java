@@ -12,6 +12,6 @@ public class DemoApplicationTests {
 
     @Test
     public void contextLoads() {
-            SpringApplication.run(DemoApplication.class);
+        SpringApplication.run(DemoApplication.class);
     }
 }
