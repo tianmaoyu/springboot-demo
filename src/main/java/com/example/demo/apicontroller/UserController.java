@@ -1,6 +1,7 @@
 package com.example.demo.apicontroller;
 
 import com.example.demo.config.Config;
+import com.example.demo.config.UserConfig;
 import com.example.demo.dto.UserDto;
 import com.example.demo.util.CommonException;
 import com.example.demo.util.Result;
@@ -25,6 +26,8 @@ public class UserController {
 
    @Autowired
    private Config config;
+    @Autowired
+   private UserConfig userConfig;
 
     @RequestMapping("getUser")
     public Result<UserDto>  getUser(){
@@ -42,6 +45,11 @@ public class UserController {
     @RequestMapping("getConfig")
     public  String getConfig(){
         return  config.getHost()+config.getAge();
+    }
+
+    @RequestMapping("userConfig")
+    public  UserConfig userConfig(){
+        return  userConfig;
     }
 
     @RequestMapping(value = "addUser",method = RequestMethod.POST)

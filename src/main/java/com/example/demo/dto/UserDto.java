@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 import com.example.demo.util.Odd;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
@@ -14,6 +15,7 @@ public class UserDto implements Serializable {
     @Min(value = 12,message = "不能小于12岁")
     private  Integer age;
 
+    @JsonIgnore
     @Odd(message = "必须为奇数")
     private  Integer level;
 

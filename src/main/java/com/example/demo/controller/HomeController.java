@@ -1,7 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.config.UserConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -9,12 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 
+    @Autowired
+    private  UserConfig user;
 /*
 
 d
  */
     @RequestMapping("index")
-    public  String index(){
+    public  String index(ModelMap modelMap){
+        modelMap.addAttribute("user",user);
         return "index" ;
     }
 
