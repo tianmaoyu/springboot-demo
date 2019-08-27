@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "com.demo")
-@PropertySource(value = "userConfig.properties")
+@PropertySource(value = "classpath:userConfig.properties")
 public class UserConfig {
     private String name;
     private Integer level;
